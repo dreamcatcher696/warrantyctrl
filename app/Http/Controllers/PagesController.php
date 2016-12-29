@@ -33,13 +33,13 @@ class PagesController extends Controller
     public function checkwijzigordelete(Request $request, File $file)
     {
         if($request->has('wijzig')) {
-            return "gewijzigd";
-          $this->edit($file);
+            //return "gewijzigd";
+          return $this->edit($file);
         }
         elseif($request->has('verwijder'))
         {
-            return "verwijdderd";
-          $this->delete($request, $file);
+            //return "verwijdderd";
+          return $this->delete($request, $file);
         }
     }
 
@@ -47,5 +47,9 @@ class PagesController extends Controller
     {
         $file=File::where('id', $file->id)->get()->first();
         return view('editone', compact('file'));
+    }
+    public function delete(File $file)
+    {
+        
     }
 }
