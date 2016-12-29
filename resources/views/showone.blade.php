@@ -25,6 +25,12 @@
     				De garantie voor het huidig artikel is nog geldig.
     			</div>
     		@endif
+            @if (Session::has('success_update'))
+                <div class="alert alert-success alert-dismissable fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    Update gelukt!
+                </div>
+            @endif
     		
 			<h1>{{$file->titel}}</h1>
 			<h3>{{$file->beschrijving}}</h3>
@@ -38,7 +44,8 @@
             
 
                 <div class="form-group" style='padding:1%'>
-                    <button type="submit" class="btn btn-primary">Wijzig Garantiebewijs</button>
+                    <button type="submit" class="btn btn-primary" name="wijzig" value="True">Wijzig Garantiebewijs</button>
+                    <button type="submit" class="btn btn-danger" name="verwijder" value="True">Verwijder Garantiebewijs</button>
                 </div>
             </form>
 		</div>

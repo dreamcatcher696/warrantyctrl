@@ -33,7 +33,7 @@
         </ul>
       </div>
     @endif
-    @if (Session::has('success'))
+    @if (Session::has('success_upload'))
       <div class="col-sm-offset-2 alert alert-success alert-dismissable fade in">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         Upload gelukt!

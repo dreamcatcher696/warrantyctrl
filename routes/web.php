@@ -19,7 +19,8 @@ Route::get('/home', 'HomeController@index');
 Route::get('/upload', 'PagesController@upload');
 Route::get('/show', 'PagesController@show');
 Route::get('/garantiebewijzen/{file}', 'PagesController@showOne');
-Route::get('/update_garantie/{file}', 'pagesController@edit');
+Route::get('/update_garantie/{file}', 'pagesController@checkwijzigordelete');
+Route::patch('garantiebewijzen/{file}', 'FilesController@update');
 Route::get('/phpinfo', function() {
 	return view('info');
 });

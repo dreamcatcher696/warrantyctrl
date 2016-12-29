@@ -60,8 +60,27 @@ class FilesController extends Controller
     $file2->storeAs('garantiebewijzen/' . auth::id(), $hashedName);
     $file->save();
     // fout ->$file->addFiletoDB($file, Auth::id());
-    Session::flash('success', 'Upload gelukt'); 
+    Session::flash('success_upload', 'Upload gelukt'); 
     return Redirect::to('upload');
-    
+  }
+  public function checkwijzigordelete(Request $request, File $file)
+  {
+    if($request->has('wijzig')) {
+      $this->update($request, $file);
+    }
+    elseif($request->has('verwijder'))
+    {
+      $this->delete($request, $file);
+    }
+  }
+  public function update(Request $request, File $file)
+  {
+    $file->update($request->all());
+    Session::flash('success_update', 'Update gelukt');
+    return Redirect::to('garantiebewijzen/'.$file->id);
+  }
+  public function delete(Request $request, File $file)
+  {
+    return $file;
   }
 }

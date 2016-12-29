@@ -30,6 +30,18 @@ class PagesController extends Controller
     	//return $file;
     	return view('showone', compact('file'));
     }
+    public function checkwijzigordelete(Request $request, File $file)
+    {
+        if($request->has('wijzig')) {
+            return "gewijzigd";
+          $this->edit($file);
+        }
+        elseif($request->has('verwijder'))
+        {
+            return "verwijdderd";
+          $this->delete($request, $file);
+        }
+    }
 
     public function edit(File $file)
     {

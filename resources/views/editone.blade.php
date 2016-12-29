@@ -25,22 +25,22 @@
 	<div class="col-md-6 col-md-offset-3">
   @if (count($errors))
     <div class="col-sm-offset-2 alert alert-danger alert-dismissable fade in">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <ul>
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <ul>
         @foreach ($errors->all() as $error)
           <li>{{$error}}</li>
         @endforeach
-        </ul>
-      </div>
-    @endif
-    @if (Session::has('success'))
+      </ul>
+    </div>
+  @endif
+    {{-- @if (Session::has('success_update'))
       <div class="col-sm-offset-2 alert alert-success alert-dismissable fade in">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         Wijziging gelukt!
       </div>
-    @endif
+    @endif --}}
 
-    <form method="POST" action="files/upload" enctype="multipart/form-data" class="form-horizontal">
+    <form method="POST" action="/garantiebewijzen/{{$file->id}}" enctype="multipart/form-data" class="form-horizontal">
       {{ csrf_field() }}
       {{method_field('PATCH')}}
       <div class="form-group">
@@ -67,12 +67,7 @@
           <textarea class="form-control" type="text" name="beschrijving" placeholder="Voeg een korte beschrijving in">{{$file->beschrijving}}</textarea>
         </div>
       </div>
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="file">Bestand</label>
-        <div class="col-sm-10">
-          <input type="file" accept="application/pdf" name="filename" id="file" data-allowed-file-extensions='["pdf"]'></input>
-        </div>
-      </div>
+      
       <div class="col-sm-2"></div>
       <div class="form-group ">
         <button type="submit" class="btn btn-primary">Wijzig</button>
