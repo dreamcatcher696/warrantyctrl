@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\File;
 use Auth;
+use Session;
+use Redirect;
+
 
 class PagesController extends Controller
 {
@@ -39,7 +42,7 @@ class PagesController extends Controller
         elseif($request->has('verwijder'))
         {
             //return "verwijdderd";
-          return $this->delete($request, $file);
+          return $this->verwijder($file);
         }
     }
 
@@ -48,9 +51,11 @@ class PagesController extends Controller
         $file=File::where('id', $file->id)->get()->first();
         return view('editone', compact('file'));
     }
-    public function delete(File $file)
+    public function verwijder(File $file)
     {
         $file=File::where('id', $file->id)->get()->first();
-        return view('verifyDelete', compact('file'));
+        $file->delete();
+        session::flash('success_delete', 'succesvol verwijderd');
+        return Redirect::to('/show');
     }
 }
