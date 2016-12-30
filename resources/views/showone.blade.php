@@ -46,6 +46,20 @@
                 <div class="form-group" style='padding:1%'>
                     <button type="submit" class="btn btn-primary" name="wijzig" value="True">Wijzig Garantiebewijs</button>
                     <button type="submit" class="btn btn-danger" name="verwijder" value="True">Verwijder Garantiebewijs</button>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">open modal</button>
+                </div>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Verwijder Garantiebewijs</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Bent u zeker dat u dit garantiebewijs wilt verwijderen?</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger">Ja ik ben zeker</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuleer</button>
+                    </div>
                 </div>
             </form>
 		</div>

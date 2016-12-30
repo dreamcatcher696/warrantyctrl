@@ -50,6 +50,7 @@ class PagesController extends Controller
     }
     public function delete(File $file)
     {
-        
+        $file=File::where('id', $file->id)->get()->first();
+        return view('verifyDelete', compact('file'));
     }
 }
