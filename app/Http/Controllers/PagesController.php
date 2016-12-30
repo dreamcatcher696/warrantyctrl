@@ -7,6 +7,7 @@ use App\File;
 use Auth;
 use Session;
 use Redirect;
+use Storage;
 
 
 class PagesController extends Controller
@@ -61,6 +62,7 @@ class PagesController extends Controller
     {
         $file=File::where('id', $file->id)->get()->first();
         $file->delete();
+        Storage::delete('garantiebewijzen/'.$file->user_id.'/'.$file->filename);
         session::flash('success_delete', 'succesvol verwijderd');
         return Redirect::to('/show');
     }
