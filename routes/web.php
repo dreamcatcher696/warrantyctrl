@@ -16,10 +16,10 @@ Route::get('/', 'PagesController@index' );
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/upload', 'PagesController@upload');
-Route::get('/show', 'PagesController@show');
-Route::get('/garantiebewijzen/{file}', 'PagesController@showOne');
-Route::get('/update_garantie/{file}', 'pagesController@checkwijzigordelete');
+Route::get('/upload', 'PagesController@upload')->middleware("auth");
+Route::get('/show', 'PagesController@show')->middleware("auth");
+Route::get('/garantiebewijzen/{file}', 'PagesController@showOne')->middleware("auth");
+Route::get('/update_garantie/{file}', 'pagesController@checkwijzigordelete')->middleware("auth");
 Route::patch('garantiebewijzen/{file}', 'FilesController@update');
 Route::get('/phpinfo', function() {
 	return view('info');
@@ -28,4 +28,4 @@ Route::get('/phpinfo', function() {
 /*Route::get('upload', function() {
   return View::make('fileupload');
 });*/
-Route::post('files/upload', 'FilesController@upload');
+Route::post('files/upload', 'FilesController@upload')->middleware("auth");
