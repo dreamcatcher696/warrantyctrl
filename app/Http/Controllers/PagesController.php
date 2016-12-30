@@ -23,10 +23,7 @@ class PagesController extends Controller
     {
     	
     	$file=File::where('user_id',Auth::id())->get();
-    	if($file->user_id != Auth::id())
-        {
-            abort(404);
-        }
+    	
     	return view("showoverzicht", compact('file'));
     }
     public function showOne(File $file)
