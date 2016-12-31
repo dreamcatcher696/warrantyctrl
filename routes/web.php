@@ -19,7 +19,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/upload', 'PagesController@upload')->middleware("auth");
 Route::get('/show', 'PagesController@show')->middleware("auth");
 Route::get('/garantiebewijzen/{file}', 'PagesController@showOne')->middleware("auth");
-Route::get('/update_garantie/{file}', 'pagesController@checkwijzigordelete')->middleware("auth");
+Route::get('/update_garantie/{file}', 'PagesController@checkwijzigordelete')->middleware("auth");
 Route::patch('garantiebewijzen/{file}', 'FilesController@update');
 Route::get('/phpinfo', function() {
 	return view('info');
