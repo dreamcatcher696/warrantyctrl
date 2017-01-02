@@ -8,6 +8,7 @@ use Validator;
 use Redirect;
 use Session;
 use Auth;
+use Carbon\Carbon;
 
 class FilesController extends Controller
 {
@@ -52,6 +53,8 @@ class FilesController extends Controller
     $file = new File($request->all());
     $file->user_id=Auth::id();
     $nieuwe_naam=$file->filename.date("Y-m-d H:i:s");
+    $purchase_date=Carbon::parse($file->aankoop_datum)->format('d/m/Y');
+    $file->aankoop_datum=$purchase_date;
     $hashedName=md5($nieuwe_naam).'.pdf';
 
     $file2 = request()->file('filename');
