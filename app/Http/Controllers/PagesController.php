@@ -8,6 +8,7 @@ use Auth;
 use Session;
 use Redirect;
 use Storage;
+use Carbon\Carbon;
 
 
 class PagesController extends Controller
@@ -24,12 +25,13 @@ class PagesController extends Controller
     {
     	
     	$file=File::where('user_id',Auth::id())->get();
-    	
     	return view("showoverzicht", compact('file'));
     }
     public function showOne(File $file)
     {
     	$file=File::where('id', $file->id)->get()->first();
+        $file->aankoop_datum=Carbon::parse($file->aankoop_datum)->format("d/m/Y");
+        $file->verloop_datum=Carbon::parse($file->verloop_datum)->format("d/m/Y");
     	if($file->user_id != Auth::id())
         {
             abort(404);

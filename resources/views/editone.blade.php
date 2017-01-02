@@ -43,22 +43,58 @@
     <form method="POST" action="/garantiebewijzen/{{$file->id}}" enctype="multipart/form-data" class="form-horizontal">
       {{ csrf_field() }}
       {{method_field('PATCH')}}
-      <div class="form-group">
+      @if(count($errors) && $errors->has('titel'))
+        <div class="form-group has-error has-feedback">
+      @elseif(count($errors)&& !$errors->has('titel'))
+        <div class="form-group has-success has-feedback">
+      @else
+        <div class="form-group">
+      @endif
         <label class="control-label col-sm-2" for="titel">Titel</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" name="titel" placeholder="voeg een titel toe" value="{{$file->titel}}"></input>
+          <input class="form-control" type="text" name="titel" placeholder="voeg een titel toe" value="{{$file->titel}}">
+            @if(count($errors) && $errors->has('titel'))
+              <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+            @elseif(count($errors)&& !$errors->has('titel'))
+              <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+            @else     
+            @endif
         </div>
       </div>
-      <div class="form-group">
+      @if(count($errors) && $errors->has('aankoop_datum'))
+        <div class="form-group has-error has-feedback">
+      @elseif(count($errors)&& !$errors->has('aankoop_datum'))
+        <div class="form-group has-success has-feedback">
+      @else
+        <div class="form-group">
+      @endif
         <label class="control-label col-sm-2" for="aankoop_datum">Aankoopdatum</label>
         <div class="col-sm-10">
-          <input class="form-control" type="date" name="aankoop_datum" value="{{$file->aankoop_datum}}"></input>
+          <input class="form-control" type="date" name="aankoop_datum" value="{{$file->aankoop_datum}}">
+          @if(count($errors) && $errors->has('aankoop_datum'))
+              <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+          @elseif(count($errors)&& !$errors->has('aankoop_datum'))
+              <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+          @else     
+          @endif
         </div>
       </div>
-      <div class="form-group">
+      @if(count($errors) && $errors->has('verloop_datum'))
+        <div class="form-group has-error has-feedback">
+      @elseif(count($errors)&& !$errors->has('verloop_datum'))
+        <div class="form-group has-success has-feedback">
+      @else
+        <div class="form-group">
+      @endif
         <label class="control-label col-sm-2" for="verloop_datum">Verloopt op</label>
         <div class="col-sm-10">
-          <input class="form-control" type="date" name="verloop_datum" value="{{$file->verloop_datum}}"></input>
+          <input class="form-control" type="date" name="verloop_datum" value="{{$file->verloop_datum}}">
+          @if(count($errors) && $errors->has('verloop_datum'))
+              <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+          @elseif(count($errors)&& !$errors->has('verloop_datum'))
+              <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+          @else     
+          @endif
         </div>
       </div>
       <div class="form-group">

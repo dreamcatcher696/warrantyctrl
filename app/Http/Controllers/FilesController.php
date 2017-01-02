@@ -49,6 +49,11 @@ class FilesController extends Controller
         'aankoop_datum'=>'required',
         'verloop_datum'=>'required',
         'filename'=>'required'
+      ],[
+        'titel.required'=>'Gelieve een titel in te geven.',
+        'aankoop_datum.required'=>'Gelieve een aankoopdatum in te geven.',
+        'verloop_datum.required'=>'Gelieve een verloopdatum in te geven.',
+        'filename.required'=>'Gelieve een file te selecteren.'
       ]);
     $file = new File($request->all());
     $file->user_id=Auth::id();
@@ -80,6 +85,17 @@ class FilesController extends Controller
   }
   public function update(Request $request, File $file)
   {
+     $this->validate($request, [
+        'titel' =>'required',
+        'aankoop_datum'=>'required',
+        'verloop_datum'=>'required'
+        
+      ],[
+        'titel.required'=>'Gelieve een titel in te geven.',
+        'aankoop_datum.required'=>'Gelieve een aankoopdatum in te geven.',
+        'verloop_datum.required'=>'Gelieve een verloopdatum in te geven.'
+        
+      ]);
     $file->update($request->all());
     Session::flash('success_update', 'Update gelukt');
     return Redirect::to('garantiebewijzen/'.$file->id);

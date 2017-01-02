@@ -42,31 +42,59 @@
 
     <form method="POST" action="files/upload" enctype="multipart/form-data" class="form-horizontal">
       {{ csrf_field() }}
-      <div class="form-group {{$errors->has('titel') ? 'has-error has-feedback' : ''}}">
+      {{-- <div class="form-group {{$errors->has('titel') ? 'has-error has-feedback' : ''}}"> --}}
+      @if(count($errors) && $errors->has('titel'))
+        <div class="form-group has-error has-feedback">
+      @elseif(count($errors)&& !$errors->has('titel'))
+        <div class="form-group has-success has-feedback">
+      @else
+        <div class="form-group">
+      @endif
         <label class="control-label col-sm-2" for="titel">Titel</label>
         <div class="col-sm-10">
           <input class="form-control" type="text" name="titel" placeholder="voeg een titel toe" value="{{old('titel')=='' ? '' : old('titel')}}">
-            @if($errors->has('titel'))
+            @if(count($errors) && $errors->has('titel'))
               <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+            @elseif(count($errors)&& !$errors->has('titel'))
+              <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+            @else     
             @endif
         </div>
       </div>
-      <div class="form-group {{$errors->has('aankoop_datum') ? 'has-error has-feedback' : ''}}">
+      @if(count($errors) && $errors->has('aankoop_datum'))
+        <div class="form-group has-error has-feedback">
+      @elseif(count($errors)&& !$errors->has('aankoop_datum'))
+        <div class="form-group has-success has-feedback">
+      @else
+        <div class="form-group">
+      @endif
         <label class="control-label col-sm-2" for="aankoop_datum">Aankoopdatum</label>
         <div class="col-sm-10">
           <input class="form-control" type="date" name="aankoop_datum" value="{{old('aankoop_datum')=='' ? '' : old('aankoop_datum')}}">
-          @if($errors->has('aankoop_datum'))
+          @if(count($errors) && $errors->has('aankoop_datum'))
               <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-            @endif
+          @elseif(count($errors)&& !$errors->has('aankoop_datum'))
+              <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+          @else     
+          @endif
         </div>
       </div>
-      <div class="form-group {{$errors->has('verloop_datum') ? 'has-error has-feedback' : ''}}">
+      @if(count($errors) && $errors->has('verloop_datum'))
+        <div class="form-group has-error has-feedback">
+      @elseif(count($errors)&& !$errors->has('verloop_datum'))
+        <div class="form-group has-success has-feedback">
+      @else
+        <div class="form-group">
+      @endif
         <label class="control-label col-sm-2" for="verloop_datum">Verloopt op</label>
         <div class="col-sm-10">
           <input class="form-control" type="date" name="verloop_datum" value="{{old('verloop_datum')=='' ? '' : old('verloop_datum')}}">
-          @if($errors->has('verloop_datum'))
+          @if(count($errors) && $errors->has('verloop_datum'))
               <span class="glyphicon glyphicon-remove form-control-feedback"></span>
-            @endif
+          @elseif(count($errors)&& !$errors->has('verloop_datum'))
+              <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+          @else     
+          @endif
         </div>
       </div>
       <div class="form-group">
@@ -75,7 +103,13 @@
           <textarea class="form-control" type="text" name="beschrijving" placeholder="Voeg een korte beschrijving in">{{old('beschrijving')}}</textarea>
         </div>
       </div>
-      <div class="form-group {{$errors->has('filename') ? 'has-error has-feedback' : ''}}">
+      @if(count($errors) && $errors->has('filename'))
+        <div class="form-group has-error has-feedback">
+      @elseif(count($errors)&& !$errors->has('filename'))
+        <div class="form-group has-success has-feedback">
+      @else
+        <div class="form-group">
+      @endif
         <label class="control-label col-sm-2" for="file">Bestand</label>
         <div class="col-sm-10">
           <input type="file" accept="application/pdf" name="filename" id="file" data-allowed-file-extensions='["pdf"]'>
