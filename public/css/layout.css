@@ -1,3 +1,14 @@
 body{
 	background-image: url('/images/web/Background.jpg')
 }
+html,body{
+	height:100%;
+}
+.footer{
+
+	right:0px;
+	left:0px;
+	bottom:0px;
+	position:absolute;
+	text-align: center;
+}

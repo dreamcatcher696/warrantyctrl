@@ -59,6 +59,11 @@
 		<div>	
 			@yield("content")
 		</div>	
-	</div>
+    </div>
+    <footer class="footer" >
+      <div class="container">
+        <p class="text-muted">Created for project Webservices By Thomas Eckert</p>
+      </div>
+    </footer>
 </body>
 </html>
