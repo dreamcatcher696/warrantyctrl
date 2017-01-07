@@ -4,6 +4,9 @@
 
 ###Mijn doel is om dmv een site een systeem te hebben om garantiebewijzen op te slaan en raad te plegen, zodat je allemaal digitaal hebt staan.
 
+Projectsite:[Warrantyctrl](https://warrantyctrl.ddns.net)
+Deze site is enkel beschikbaar als mijn raspberry Pi in het stopcontact steekt.
+
 Gebruikte technologieën:
 
 1. Frontend
