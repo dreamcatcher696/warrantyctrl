@@ -68,4 +68,9 @@ class PagesController extends Controller
         session::flash('success_delete', 'succesvol verwijderd');
         return Redirect::to('/show');
     }
+    public function redirectFromLogin()
+    {
+        Session::flash('success_login', 'login gelukt');
+        return Redirect::to('/show');
+    }
 }

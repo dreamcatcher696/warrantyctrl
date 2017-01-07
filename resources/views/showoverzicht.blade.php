@@ -8,6 +8,13 @@
 	            	Garantiebewijs is verwijderd!
 	        	</div>
 	    	@endif
+	    	@if (Session::has('success_login'))
+	    		<div class="alert alert-success alert-dismissable fade in ">
+	            	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	            	U bent nu ingelogd!
+	        	</div>
+	    	@endif
+
 			<h1>Overzicht</h1>
 			<hr>
 			<ul class="list-group">
