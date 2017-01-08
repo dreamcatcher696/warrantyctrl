@@ -103,7 +103,7 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">De beste site om al uw garantiebewijzen te arcchiveren</h1>
+                <h1 id="homeHeading">De beste site om al uw garantiebewijzen te archiveren</h1>
                 <hr>
                 <p>Herkent u zich in het volgende:<br>
                 Wanneer u na een bepaalde tijd wilt kijken of uw garantie nog geldig is, maar u dat stomme papier net dan niet kan vinden</p>
