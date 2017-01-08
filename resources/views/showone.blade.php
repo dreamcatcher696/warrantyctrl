@@ -8,6 +8,9 @@
             padding: 0;
             overflow: hidden;
         }
+        .footer{
+            position:static;
+        }
         </style>
 
 @stop
