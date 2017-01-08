@@ -14,7 +14,7 @@
 @section('content')
 	<div class="text-center">
 		<div class="col-md-8 col-md-offset-2">
-			@if($file->verloop_datum < \Carbon\Carbon::today())
+			@if($file->verloop_datum > \Carbon\Carbon::today())
 				<div class=" alert alert-warning alert-dismissable fade in">
     				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     				U heeft geen garantie meer op het huidig artikel.
