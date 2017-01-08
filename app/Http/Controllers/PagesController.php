@@ -15,7 +15,8 @@ class PagesController extends Controller
 {
     public function index()
     {
-    	return view("hoofdpagina");
+        return view("homepage");
+    	/*return view("hoofdpagina");*/
     }
     public function upload()
     {
