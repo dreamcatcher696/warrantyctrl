@@ -27,3 +27,7 @@ Hierna voeren we het volgend commando uit, en volgen we de instructies op het sc
 	sudo certbot --apache
 	
 that's it! ik heb voor secure gekozen. als we echter naar de site surfen, gaat deze niet standaard via https. dit moeten we ervoor zetten. ik weet niet hoe dit komt
+
+Bronnen:
+
+ * <https://certbot.eff.org/#debianjessie-apache>

@@ -68,3 +68,7 @@ composer global require laravel/valet
 valet install
 ```
 
+Bronnen:
+
+ * <https://laravel.com/docs/5.3/installation>
+ * <https://laravel.com/docs/5.3/valet>

@@ -103,3 +103,9 @@ Dit moet ook in de apacheconf worden aangepast
 hier zoek je naar: "\<Directory /var/www/>"
 en pas je AllowOverride None aan naar AllowOverride All
 
+Bronnen
+
+* <https://www.stewright.me/2016/03/turn-raspberry-pi-3-php-7-powered-web-server/>
+* <https://www.stewright.me/2012/09/tutorial-install-phpmyadmin-on-your-raspberry-pi/>
+* <https://www.youtube.com/watch?v=7mWZLPdE2B4>
+Part 3 voor de permissies

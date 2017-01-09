@@ -54,3 +54,7 @@ Nu volgt enkel nog het openzetten van poort 80,22 en 443 openzetten voor het ip 
 Ik heb er ook voor gekozen om poort 5900 open te zetten zodat ik nog steeds aan mijn vnc server kan.
 
 hierna zou je naar je domeinnaam kunnen surfen, en zou alles moeten werken.
+
+Bronnen
+
+* <http://www.noip.com/support/knowledgebase/install-ip-duc-onto-raspberry-pi/>
